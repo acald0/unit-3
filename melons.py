@@ -35,7 +35,7 @@ def look_up_by_id(melon_id):
 
 # print(look_up_by_id('takg'))
 
-def list_of_objects(melon_dict):
+def get_all():
     return list(melon_dict.values())
 
-print(list_of_objects(melon_dict))
+# print(get_all(melon_dict))
