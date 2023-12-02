@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Find a melon: </h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <h2> {{ melon.common_name }} </h2>
+    <img class="melon-image" src="{{ melon.image_url }}">
+    <h4>Price: {{ melon.price_str() }}</h4>
+    <h4>Color: {{ melon.color }}</h4>
+    {% if melon.seedless == True %}
+        <h4>Seedless</h4>
+    {% else %}
+        <h4>Warning: This melon has seeds!</h4>
+    {% endif %}
+
+    <a class="btn btn-primary" href="{{ url_for('add_to_cart', melon_id=melon.melon_id) }}">Add to Cart</a>
+{% endblock %}

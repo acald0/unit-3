@@ -30,7 +30,7 @@ with open("melons.csv") as csvfile:
 # print(melon_dict)
 
 
-def look_up_by_id(melon_id):
+def get_by_id(melon_id):
     return melon_dict[melon_id]
 
 # print(look_up_by_id('takg'))
